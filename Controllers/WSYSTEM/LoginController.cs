@@ -13,5 +13,10 @@ namespace ECUS_MAN.Controllers.WSYSTEM
         {
             return View();
         }
+
+        public ActionResult Login()
+        {
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
