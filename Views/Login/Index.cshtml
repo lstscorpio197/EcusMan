@@ -1,0 +1,178 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECUS MAN</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*<link rel="stylesheet" href="/AdminLTE/plugins/font-awesome/css/font-awesome.min.css">*@
+    <!-- Ionicons -->
+    <!-- DataTables -->
+    @*<link rel="stylesheet" href="/AdminLTE/plugins/datatables/dataTables.bootstrap4.css">*@
+    <!-- Select2 -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/select2/select2.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/AdminLTE/dist/css/adminlte.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/iCheck/all.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    @*<link rel="stylesheet" href="/AdminLTE/plugins/daterangepicker/daterangepicker-bs3.css">*@
+
+    @*<link href="~/AdminLTE/plugins/daterangepicker-mater/daterangepicker.css" rel="stylesheet" />*@
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    @*<link rel="stylesheet" type="text/css" href="~/Content/Reference/fonts.googleapis.com.css" />*@
+    <link rel="stylesheet" type="text/css" href="~/Content/Reference/jquery-confirm.css" />
+    <link rel="stylesheet" href="~/Content/Reference/preloader.css" />
+    <link href="~/AdminLTE/plugins/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/site-main.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/site-vertical.css" rel="stylesheet" />
+    <link href="~/Content/Site-login.css" rel="stylesheet" />
+</head>
+<body class="hold-transition sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <div class="content-wrapper" style="margin-top:0!important">
+            <div class="content-fluid height100">
+                <div class="card mb0px height100">
+                    <div class="card-body padding0px" style="overflow-y: auto; overflow-x: hidden;">
+                        <div class="row height100">
+                            <div class="wid100" style="background: url(/Content//Images/bg.jpg) no-repeat; background-size:100% 100%; overflow-y:auto; overflow-x:hidden">
+                                <div class="form-bottom">
+                                    <div class="text-center">
+                                        <img src="~/Content/Images/logo-png-new.jpg" />
+                                    </div>
+                                    <div class="main-frame">
+                                        <div class="mb20 mt20 text-center text-uppercase bold" style="font-size: 21px;">
+                                            Đăng nhập hệ thống
+                                        </div>
+                                        <form role="form" action="@Url.Action("Index", "Login")" method="post" class="login-form" id="formgr">
+                                            @Html.AntiForgeryToken()
+                                            @{
+                                                if (ViewBag.alert != null)
+                                                {
+                                                    <div class="alert alert-warning" style="padding: 7px 15px;">
+                                                        @Html.Raw(ViewBag.alert)
+                                                    </div>
+                                                }
+                                            }
+                                            <div class="mb20 mt20">
+                                                Tên đăng nhập
+                                                <div class="form-group position-relative mb20">
+                                                    <label class="sr-only" for="form-username">Username</label>
+                                                    <input autofocus value="@ViewBag.UserName" type="text" data-bv-notempty="true" name="Username" placeholder="Tên đăng nhập..." class="form-username form-control" id="form-username" />
+                                                </div>
+                                                Mật khẩu
+                                                <div class="form-group position-relative mb20">
+                                                    <label class="sr-only" for="form-password">Password</label>
+                                                    <input value="@ViewBag.PassWord" type="text" data-bv-notempty="true" name="Password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password" />
+                                                </div>
+                                            </div>
+                                            <div class="row mb20">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <input type="hidden" name="IsRemember" value="0" />
+                                                    <label><input type="checkbox" class="ace cb" name="CheckRememberMe" /><span class="lbl">&nbsp;Lưu đăng nhập</span></label>
+                                                </div>
+                                                <div class="col-sm-6 col-md-6 text-right">
+                                                    <span class="btnQuenMatKhau cursor" style=""><i class="fa fa-question-circle-o" aria-hidden="true"></i>&nbsp;Quên mật khẩu</span>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn" style=""><i class="fa fa-sign-in"></i>&nbsp;Đăng nhập</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fraim-login hidden">
+        <div class="mb20 mt20 text-center text-uppercase bold" style="font-size: 21px;">
+            Đăng nhập hệ thống
+        </div>
+        <form role="form" action="@Url.Action("Index", "Login")" method="post" class="login-form" id="formgr">
+            @Html.AntiForgeryToken()
+            @{
+                if (ViewBag.alert != null)
+                {
+                    <div class="alert alert-warning" style="padding: 7px 15px;">
+                        @Html.Raw(ViewBag.alert)
+                    </div>
+                }
+            }
+            <div class="mb20 mt20">
+                Tên đăng nhập
+                <div class="form-group position-relative mb20">
+                    <label class="sr-only" for="form-username">Username</label>
+                    <input autofocus value="@ViewBag.UserName" type="text" data-bv-notempty="true" name="Username" placeholder="Tên đăng nhập..." class="form-username form-control" id="form-username" />
+                </div>
+                Mật khẩu
+                <div class="form-group position-relative mb20">
+                    <label class="sr-only" for="form-password">Password</label>
+                    <input value="@ViewBag.PassWord" type="text" data-bv-notempty="true" name="Password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password" />
+                </div>
+            </div>
+            <div class="row mb20">
+                <div class="col-sm-6 col-md-6">
+                    <input type="hidden" name="IsRemember" value="0" />
+                    <label><input type="checkbox" class="ace cb" name="CheckRememberMe" /><span class="lbl">&nbsp;Lưu đăng nhập</span></label>
+                </div>
+                <div class="col-sm-6 col-md-6 text-right">
+                    <span class="btnQuenMatKhau cursor" style=""><i class="fa fa-question-circle-o" aria-hidden="true"></i>&nbsp;Quên mật khẩu</span>
+                </div>
+            </div>
+            <button type="submit" class="btn" style=""><i class="fa fa-sign-in"></i>&nbsp;Đăng nhập</button>
+        </form>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript" src="~/Scripts/Reference/Message.js"></script>
+    <script type="text/javascript" src="~/Scripts/Reference/jquery-confirm.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/EcusJs")
+    @Scripts.Render("~/bundles/CommonJs")
+    @Scripts.Render("~/bundles/Validator")
+    <script src="~/Scripts/Reference/jquery.preloader.min.js"></script>
+    <script src="~/Scripts/Common/common.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="/AdminLTE/plugins/select2/select2.full.min.js"></script>
+    <script src="/AdminLTE/dist/js/adminlte.js"></script>
+
+    <script>
+        //Khởi tạo validate cho form
+        $('#formgr').bootstrapValidator({
+            excluded: ':disabled',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            }
+        });
+
+        function ReSize() {
+            var $cardBody = $('.card-body');
+            $cardBody.css('height', window.innerHeight);
+        }
+        ReSize();
+        $(window).on('resize', function () { ReSize(); });
+    </script>
+</body>
+</html>
+

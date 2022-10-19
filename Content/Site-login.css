@@ -1,0 +1,80 @@
+﻿/*body{background:url(/Content/image/blue-sky.jpg) no-repeat; background-size:100% 100%;overflow-y:auto;overflow-x:hidden}*/
+.wrapper {
+    background-color: transparent;
+}
+
+.content-wrapper {
+    margin-left: 0px !important;
+    background-color: transparent !important;
+}
+
+.form-bottom {
+    margin-bottom: 30px;
+    width: 25%;
+    display: inline-block;
+    background: #fff;
+    padding:30px 20px 30px 20px;
+    left:70%;
+    top:10%;
+    position:absolute;
+    height:75%;
+    border-radius:16px;
+}
+
+input[name=Username], input[name=Password], .btn {
+    height: 40px;
+}
+
+.form-control, .btn {
+    border-radius: 8px !important;
+    
+}
+.btn {
+    width: 100%;
+    background-color: #3A86FF;
+    color: #fff;
+}
+.btnQuenMatKhau:hover {
+    color: #006A99;
+}
+
+input[type=checkbox].ace:checked + .lbl::before, input[type=radio].ace:checked + .lbl::before, input[type=checkbox].ace + .lbl::before, input[type=radio].ace + .lbl::before {
+    border-radius: 10px;
+}
+
+.sidebar-collapse .jconfirm:last-child {
+    padding-left: 0 !important;
+}
+
+form br {
+    display: none;
+}
+
+
+@media (min-width: 992px) {
+    .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-bottom {
+        width: 98% !important;
+    }
+}
+/* input[name=Username], input[name=Password]{padding-left:35px;}*/
+form .fa.fa-user-circle-o, form .fa-key {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    font-size: 20px;
+    color: #0078d4;
+}
+
+input[type=checkbox].ace + .lbl::before, input[type=radio].ace + .lbl::before {
+    border-color: #343a40 !important;
+}
+
+input[type=checkbox].ace:checked + .lbl::before, input[type=radio].ace:checked + .lbl::before {
+    color: #343a40 !important;
+}
