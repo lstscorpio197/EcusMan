@@ -3,13 +3,43 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+
+    <link rel="stylesheet" href="/AdminLTE/plugins/select2/select2.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/AdminLTE/dist/css/adminlte.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/iCheck/all.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    @*<link rel="stylesheet" href="/AdminLTE/plugins/daterangepicker/daterangepicker-bs3.css">*@
+
+    @*<link href="~/AdminLTE/plugins/daterangepicker-mater/daterangepicker.css" rel="stylesheet" />*@
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    @*<link rel="stylesheet" type="text/css" href="~/Content/Reference/fonts.googleapis.com.css" />*@
+    <link rel="stylesheet" type="text/css" href="~/Content/Reference/jquery-confirm.css" />
+    <link rel="stylesheet" href="~/Content/Reference/preloader.css" />
+    <link href="~/AdminLTE/plugins/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/site-main.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/site-vertical.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css"
           crossorigin="anonymous">
+    <link href="~/Content/Site.css" rel="stylesheet">
+    <link href="~/Content/site-vertical.css" rel="stylesheet">
     <link href="~/Content/all.css" rel="stylesheet">
     <link href="~/Content/Layout.css" rel="stylesheet">
+    <link href="~/Content/Modal.css" rel="stylesheet">
 </head>
 <body>
     <div class="page-wrapper chiller-theme toggled">
@@ -19,22 +49,21 @@
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <div class="sidebar-brand">
-                    <a href="#">
-                        <img src="~/Content/Images/logo-png-new.jpg"/>
+                    <a href="/Home">
+                        <img src="~/Content/Images/logo-png-new.jpg" />
                     </a>
                     <div id="close-sidebar">
                         <i class="fas fa-times"></i>
                     </div>
                 </div>
-                <div class="sidebar-header">
+                <div class="sidebar-header sidebar-user cursor" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="">
                     <div class="user-pic">
-                        <img class="img-responsive img-rounded" src=""
+                        <img class="img-responsive img-rounded" src="~/Content/Images/5267787e24324dd7a8df11c0ce4d3c13.gif"
                              alt="User picture">
                     </div>
                     <div class="user-info">
                         <span class="user-name">
-                            Jhon
-                            <strong>Smith</strong>
+                            <strong>Thức Đỗ</strong>
                         </span>
                         <span class="user-role">Administrator</span>
                         <span class="user-status">
@@ -42,157 +71,178 @@
                             <span>Online</span>
                         </span>
                     </div>
+                    <div id="popover-content" class="hidden">
+                        <div class="popover-content">
+                            <p class="mt10"><span class="view-user-info cursor"><i class="fa fa-user"></i>&nbsp;Thông tin cá nhân</span></p>
+                            <p><span class="change-pass cursor"><i class="fa fa-lock"></i>&nbsp;Đổi mật khẩu</span></p>
+                            <p><span class="log-out cursor"><i class="fas fa-sign-out-alt"></i>&nbsp;Đăng xuất</span></p>
+                        </div>
+                    </div>
                 </div>
                 <!-- sidebar-header  -->
                 @*<div class="sidebar-search">
-                    <div>
-                        <div class="input-group">
-                            <input type="text" class="form-control search-menu" placeholder="Search...">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </span>
+                        <div>
+                            <div class="input-group">
+                                <input type="text" class="form-control search-menu" placeholder="Search...">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>*@
+                    </div>*@
                 <!-- sidebar-search  -->
                 <div class="sidebar-menu">
                     <ul>
-                        <li class="header-menu">
-                            <span>General</span>
-                        </li>
+                        @*<li class="header-menu">
+                                <span>General</span>
+                            </li>*@
                         <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="fa fa-tachometer-alt"></i>
-                                <span>Dashboard</span>
-                                <span class="badge badge-pill badge-warning">New</span>
+                                <strong>Hệ thống</strong>
+                                <span class="badge badge-pill badge-warning"></span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            Dashboard 1
-                                            <span class="badge badge-pill badge-success">Pro</span>
+                                            Quản lý tài khoản, phân quyền
+                                            <span class="badge badge-pill badge-success"></span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">Dashboard 2</a>
+                                        <a href="#">Quản lý chức năng</a>
                                     </li>
                                     <li>
-                                        <a href="#">Dashboard 3</a>
+                                        <a href="#">Danh mục phòng ban</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>E-commerce</span>
-                                <span class="badge badge-pill badge-danger">3</span>
+                                <i class="fas fa-edit"></i>
+                                <strong>ECUS - SignPro</strong>
+                                <span class="badge badge-pill badge-danger"></span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            Products
-
+                                            Danh sách tài khoản
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">Orders</a>
+                                        <a href="#">Gói dịch vụ</a>
                                     </li>
                                     <li>
-                                        <a href="#">Credit cart</a>
+                                        <a href="#">Danh sách tài khoản</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="far fa-gem"></i>
-                                <span>Components</span>
+                                <i class="fas fa-chart-line"></i>
+                                <strong>ECUS - Audit</strong>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">General</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Panels</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Forms</a>
+                                        <a href="#">Danh sách</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-chart-line"></i>
-                                <span>Charts</span>
+                                <i class="fas fa-database"></i>
+                                <strong>ECUS - Drive</strong>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">Pie chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Line chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bar chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Histogram</a>
+                                        <a href="#">Danh sách</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-globe"></i>
-                                <span>Maps</span>
+                                <i class="fas fa-comment"></i>
+                                <strong>ECUS - Comments</strong>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">Google maps</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Open street map</a>
+                                        <a href="#">Danh sách</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="header-menu">
-                            <span>Extra</span>
-                        </li>
-                        <li>
+                        <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-book"></i>
-                                <span>Documentation</span>
-                                <span class="badge badge-pill badge-primary">Beta</span>
+                                <i class="fas fa-key"></i>
+                                <strong>ECUS - Bản quyền</strong>
                             </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Danh sách</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li>
+                        <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-calendar"></i>
-                                <span>Calendar</span>
+                                <i class="fas fa-bullhorn"></i>
+                                <strong>ECUS - Thông báo</strong>
                             </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Danh sách</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li>
+                        <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-folder"></i>
-                                <span>Examples</span>
+                                <i class="fas fa-sync"></i>
+                                <strong>ECUS - Update</strong>
                             </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Danh sách</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
+                        @*<li class="header-menu">
+                                <span>Extra</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-book"></i>
+                                    <span>Documentation</span>
+                                    <span class="badge badge-pill badge-primary">Beta</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>Calendar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-folder"></i>
+                                    <span>Examples</span>
+                                </a>
+                            </li>*@
                     </ul>
                 </div>
                 <!-- sidebar-menu  -->
@@ -223,19 +273,31 @@
         <!-- page-content" -->
     </div>
     @*<div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>*@
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>*@
+
+    @Html.Partial("_UserInfoModal");
 
     @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript" src="~/Scripts/Reference/Message.js"></script>
+    <script type="text/javascript" src="~/Scripts/Reference/jquery-confirm.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
+    @Scripts.Render("~/bundles/EcusJs")
+    @Scripts.Render("~/bundles/CommonJs")
+    @Scripts.Render("~/bundles/Validator")
+    <script src="~/Scripts/Reference/jquery.preloader.min.js"></script>
+    <script src="~/Scripts/Common/common.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="/AdminLTE/plugins/select2/select2.full.min.js"></script>
+    <script src="/AdminLTE/dist/js/adminlte.js"></script>
     <script>
         jQuery(function ($) {
+
             $(".sidebar-dropdown > a").click(function () {
                 $(".sidebar-submenu").slideUp(200);
                 if (
@@ -264,7 +326,28 @@
             $("#show-sidebar").click(function () {
                 $(".page-wrapper").addClass("toggled");
             });
+
         });
+    </script>
+    <script>
+        $('.sidebar-user').off('click').on('click', function () {
+            $(this).trigger('focus');
+            $('[data-toggle="popover"]').popover({
+                trigger: 'focus',
+                html: true,
+                placement: 'left',
+                content: $('#popover-content').html()
+            });
+            $('[data-toggle="popover"]').on('shown.bs.popover', function () {
+                $('.popover .view-user-info').off('click').on('click', function () {
+                    $('.user-info-modal').modal('show');
+                })
+            })
+        })
+
+        var $UserInfoModal = {
+
+        }
     </script>
 </body>
 </html>

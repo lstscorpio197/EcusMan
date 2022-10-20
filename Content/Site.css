@@ -765,6 +765,9 @@ input[type=checkbox][disabled].ace+.lbl::before, input[type=radio][disabled].ace
 .modal-dialog{margin-top:0px;}
 .full.modal .modal-dialog{width: 99%!important;    margin: 5px auto!important;    max-width: 100%;}
 /*End*/
+.hidden{
+    display:none;
+}
 
 /*ThucDt*/
 table tr td {
