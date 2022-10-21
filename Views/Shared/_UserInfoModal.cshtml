@@ -1,5 +1,5 @@
-﻿<div class="modal top fade user-info-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-    <div class="modal-dialog  ">
+﻿<div class="modal top fade user-info-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true" data-keyboard="true">
+    <div class="modal-dialog modal-lg ">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Hồ sơ người dùng</h5>
@@ -7,7 +7,17 @@
             </div>
             <div class="modal-body">
                 <div class="avatar">
-
+                    <div class="avatar-upload">
+                        <div class="avatar-edit">
+                            <form action="" method="post" id="form-image">
+                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                <label for="imageUpload"></label>
+                            </form>
+                        </div>
+                        <div class="avatar-preview">
+                            <img class="profile-user-img img-responsive img-circle" id="imagePreview" src="~/Content/Images/user-avatar.png" alt="User profile picture">
+                        </div>
+                    </div>
                 </div>
                 <div class="info">
                     <div class="row">
@@ -20,24 +30,82 @@
                         <div class="col-md-6 col-sm-6">
                             Giới tính:
                             <div class="wid100">
-                                <div class="float-left col-sm-6 col-md-6 padding0px">
-                                    <input type="radio" name="Gender" value="0" id="male" checked />
+                                <div class="float-left col-sm-6 col-md-6 padding0px mb-0">
+                                    <input type="radio" name="Gender" value="0" id="male" />
                                     <label for="male">Nam</label>
                                 </div>
-                                <div class="float-left col-sm-6 col-md-6 padding0px">
+                                <div class="float-left col-sm-6 col-md-6 padding0px mb-0">
                                     <input type="radio" name="Gender" value="1" id="female" />
                                     <label for="female">Nữ</label>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            Email:
+                            <div class="wid100">
+                                <input type="text" class="wid100" name="Email" value="" placeholder="Email..." />
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            Điện thoại:
+                            <div class="wid100">
+                                <input type="text" class="wid100" name="Phone" value="" placeholder="Số điện thoại..." />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            Địa chỉ:
+                            <div class="wid100">
+                                <input type="text" class="wid100" name="Address" value="" placeholder="Địa chỉ..." />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                    Close
+                <button type="button" class="btn btn-secondary btn-dismiss" data-dismiss="modal">
+                    Hủy
                 </button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary btn-save">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal top fade change-pass-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true" data-keyboard="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Đổi mật khẩu</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    Mật khẩu hiện tại
+                    <div class="form-group">
+                        <input id="password-field" type="password" class="form-control" name="password" value="">
+                        <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
+                    </div>
+                    Mật khẩu mới
+                    <div class="form-group">
+                        <input id="new-pass" type="password" class="form-control" name="password" value="">
+                        <span toggle="#new-pass" class="fa fa-eye-slash field-icon toggle-password"></span>
+                    </div>
+                    Xác nhận mật khẩu mới
+                    <div class="form-group">
+                        <input id="new-pass" type="password" class="form-control" name="password" value="">
+                        <span toggle="#new-pass" class="fa fa-eye-slash field-icon toggle-password"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-dismiss" data-dismiss="modal">
+                    Hủy
+                </button>
+                <button type="button" class="btn btn-primary btn-save">Lưu</button>
             </div>
         </div>
     </div>

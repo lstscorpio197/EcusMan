@@ -331,7 +331,10 @@ input[disabled], textarea[disabled],select[disabled]{background-color: #edebe9!i
 .modal-header .close, .modal-header .mailbox-attachment-close {    padding: 2px 19px;}
 .modal-content{border-radius:2px;    border-color: #ddd;    box-shadow: none;}
 .modal-body{background-color:#fff; overflow:auto;padding:10px 15px;}
-.modal-footer{background-color:#faf9f8;padding:10px}
+.modal-footer {
+    background-color: #F4F6FA;
+    padding: 10px
+}
 .modal-footer .btn-left{position: absolute; left: 15px;}
 .modal-open .modal{padding-top:50px;overflow:hidden;}
 .modal-backdrop.in{opacity:0.1!important}
@@ -358,7 +361,6 @@ input[disabled], textarea[disabled],select[disabled]{background-color: #edebe9!i
 .frame-search .datetimepicker input{width: 132px!important;}
 .frame-search .item-search{width:120px;margin-bottom:5px;display: inline-block; font-style: italic;margin-right:2px;}
 .frame-search .item-search,.modal input, .search-fast .item-search{height:30px!important;border: 1px solid #ccc;padding-left: 2px; border-radius:2px;}
-.modal .modal-body input{height:28px!important;}
 .modal .modal-body .frame-search input{height:30px!important;}
 .frame-search .item-search.except{max-width:500px;}
 .frame-search .item-search.item-last-firstline,.frame-search .item-search.item-last{margin-right:0px;}

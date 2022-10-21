@@ -915,6 +915,7 @@
     <Content Include="Content\Images\5267787e24324dd7a8df11c0ce4d3c13.gif" />
     <Content Include="Content\Images\bg.jpg" />
     <Content Include="Content\Images\logo-png-new.jpg" />
+    <Content Include="Content\Images\user-avatar.png" />
     <Content Include="Content\Modal.css" />
     <Content Include="Content\Reference\fonts.googleapis.com.css" />
     <Content Include="Content\Reference\jquery-confirm.css" />

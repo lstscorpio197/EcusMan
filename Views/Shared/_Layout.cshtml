@@ -56,7 +56,7 @@
                         <i class="fas fa-times"></i>
                     </div>
                 </div>
-                <div class="sidebar-header sidebar-user cursor" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="">
+                <div class="sidebar-header sidebar-user cursor" tabindex="0" data-toggle="popover" data-trigger="focus" data-content="" style="background-color:#F4F6FA">
                     <div class="user-pic">
                         <img class="img-responsive img-rounded" src="~/Content/Images/5267787e24324dd7a8df11c0ce4d3c13.gif"
                              alt="User picture">
@@ -65,20 +65,33 @@
                         <span class="user-name">
                             <strong>Thức Đỗ</strong>
                         </span>
-                        <span class="user-role">Administrator</span>
-                        <span class="user-status">
-                            <i class="fa fa-circle"></i>
-                            <span>Online</span>
-                        </span>
+                        <span class="user-mail">admin@gmai.com</span>
+                        @*<span class="user-role">Administrator</span>*@
+                        @*<span class="user-status">
+                                <i class="fa fa-circle"></i>
+                                <span>Online</span>
+                            </span>*@
                     </div>
                     <div id="popover-content" class="hidden">
                         <div class="popover-content">
-                            <p class="mt10"><span class="view-user-info cursor"><i class="fa fa-user"></i>&nbsp;Thông tin cá nhân</span></p>
-                            <p><span class="change-pass cursor"><i class="fa fa-lock"></i>&nbsp;Đổi mật khẩu</span></p>
-                            <p><span class="log-out cursor"><i class="fas fa-sign-out-alt"></i>&nbsp;Đăng xuất</span></p>
+                            <p class="mt10"><span class="view-user-info cursor"><a><i class="fa fa-user"></i>&nbsp;Thông tin cá nhân</a></span></p>
+                            <p><span class="change-pass cursor"><a><i class="fa fa-lock"></i>&nbsp;Đổi mật khẩu</a></span></p>
+                            <p><span class="log-out cursor" for="logout"><a href="/Login/Logout" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;Đăng xuất</a></span></p>
                         </div>
                     </div>
                 </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-notif cursor">
+                    <div>
+                        <i class="fas fa-bell"></i>&nbsp;
+                        @*<span class="badge">3</span>*@
+                        <strong class="ml10">Thông báo</strong>
+                        <div class="float-right">
+                            <span class="notif-badge">10</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar-search  -->
                 <!-- sidebar-header  -->
                 @*<div class="sidebar-search">
                         <div>
@@ -343,11 +356,37 @@
                     $('.user-info-modal').modal('show');
                 })
             })
+            $('[data-toggle="popover"]').on('shown.bs.popover', function () {
+                $('.popover .change-pass').off('click').on('click', function () {
+                    $('.change-pass-modal').modal('show');
+                })
+            })
         })
 
         var $UserInfoModal = {
+            init: function () {
+                this.Event();
+            },
+            Self: $('.user-info-modal'),
+            Event: function () {
+                this.ChangeAvatar();
+            },
+            ChangeAvatar: function () {
+                $(document).on('change', '#imageUpload', function (data) {
+                    var imageFile = data.target.files[0];
+                    var reader = new FileReader();
+                    reader.readAsDataURL(imageFile);
 
+                    reader.onload = function (evt) {
+                        $('#imagePreview').attr('src', evt.target.result);
+                        $('#imagePreview').hide();
+                        $('#imagePreview').fadeIn(500);
+                    }
+
+                });
+            }
         }
+        $UserInfoModal.init();
     </script>
 </body>
 </html>
