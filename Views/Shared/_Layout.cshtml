@@ -68,9 +68,9 @@
                         <span class="user-mail">admin@gmai.com</span>
                         @*<span class="user-role">Administrator</span>*@
                         @*<span class="user-status">
-                                <i class="fa fa-circle"></i>
-                                <span>Online</span>
-                            </span>*@
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>*@
                     </div>
                     <div id="popover-content" class="hidden">
                         <div class="popover-content">
@@ -85,7 +85,7 @@
                     <div>
                         <i class="fas fa-bell"></i>&nbsp;
                         @*<span class="badge">3</span>*@
-                        <strong class="ml10">Thông báo</strong>
+                        <strong class="">Thông báo</strong>
                         <div class="float-right">
                             <span class="notif-badge">10</span>
                         </div>
@@ -94,35 +94,34 @@
                 <!-- sidebar-search  -->
                 <!-- sidebar-header  -->
                 @*<div class="sidebar-search">
-                        <div>
-                            <div class="input-group">
-                                <input type="text" class="form-control search-menu" placeholder="Search...">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </span>
-                                </div>
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
                             </div>
                         </div>
-                    </div>*@
+                    </div>
+                </div>*@
                 <!-- sidebar-search  -->
                 <div class="sidebar-menu">
                     <ul>
                         @*<li class="header-menu">
-                                <span>General</span>
-                            </li>*@
+                            <span>General</span>
+                        </li>*@
                         <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="fa fa-tachometer-alt"></i>
                                 <strong>Hệ thống</strong>
-                                <span class="badge badge-pill badge-warning"></span>
+                                
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
                                         <a href="#">
                                             Quản lý tài khoản, phân quyền
-                                            <span class="badge badge-pill badge-success"></span>
                                         </a>
                                     </li>
                                     <li>
@@ -138,7 +137,6 @@
                             <a href="#">
                                 <i class="fas fa-edit"></i>
                                 <strong>ECUS - SignPro</strong>
-                                <span class="badge badge-pill badge-danger"></span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
@@ -235,49 +233,49 @@
                             </div>
                         </li>
                         @*<li class="header-menu">
-                                <span>Extra</span>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-book"></i>
-                                    <span>Documentation</span>
-                                    <span class="badge badge-pill badge-primary">Beta</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>Calendar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-folder"></i>
-                                    <span>Examples</span>
-                                </a>
-                            </li>*@
+                            <span>Extra</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-book"></i>
+                                <span>Documentation</span>
+                                <span class="badge badge-pill badge-primary">Beta</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-calendar"></i>
+                                <span>Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-folder"></i>
+                                <span>Examples</span>
+                            </a>
+                        </li>*@
                     </ul>
                 </div>
                 <!-- sidebar-menu  -->
             </div>
             <!-- sidebar-content  -->
             <!--<div class="sidebar-footer">
-                <a href="#">
-                    <i class="fa fa-bell"></i>
-                    <span class="badge badge-pill badge-warning notification">3</span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-envelope"></i>
-                    <span class="badge badge-pill badge-success notification">7</span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-cog"></i>
-                    <span class="badge-sonar"></span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-power-off"></i>
-                </a>
-            </div>-->
+            <a href="#">
+                <i class="fa fa-bell"></i>
+                <span class="badge badge-pill badge-warning notification">3</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-envelope"></i>
+                <span class="badge badge-pill badge-success notification">7</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-cog"></i>
+                <span class="badge-sonar"></span>
+            </a>
+            <a href="#">
+                <i class="fa fa-power-off"></i>
+            </a>
+        </div>-->
         </nav>
         <!-- sidebar-wrapper  -->
         <main class="page-content">
@@ -309,6 +307,16 @@
     <script src="/AdminLTE/plugins/select2/select2.full.min.js"></script>
     <script src="/AdminLTE/dist/js/adminlte.js"></script>
     <script>
+        function ReSize() {
+            var $cardBody = $('.page-content');
+            var $pageBody = $('.page-body');
+            $cardBody.css('height', window.innerHeight - 21);
+            $pageBody.css('height', window.innerHeight - 55);
+        }
+        ReSize();
+        $(window).on('resize', function () { ReSize(); });
+    </script>
+    <script>
         jQuery(function ($) {
 
             $(".sidebar-dropdown > a").click(function () {
@@ -335,6 +343,7 @@
 
             $("#close-sidebar").click(function () {
                 $(".page-wrapper").removeClass("toggled");
+                //$('.sidebar-menu a strong').toggleClass('hidden');
             });
             $("#show-sidebar").click(function () {
                 $(".page-wrapper").addClass("toggled");

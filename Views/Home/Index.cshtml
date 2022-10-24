@@ -1,27 +1,139 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<style>
-    #chart {
-        max-width: 650px;
-        margin: 35px auto;
-    }
 
-</style>
-<div id="chart">
 
+<div class="page height100">
+    <div class=" mb0px height100">
+        <div class="page-title">
+            Dashboard
+        </div>
+        <div class="page-body wid100 height100">
+            <div class="row mb10">
+                <div class="col-md-4 col-sm-4">
+                    <div class="wid100 br5px data-box">
+                        <div class="row">
+                            <div class="col-sm-10 col-md-10">
+                                <p>Tổng số khách hàng</p>
+                                <span>68000000</span>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="float-right mt20"><i class="fas fa-users"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="wid100 br5px data-box">
+                        <div class="row">
+                            <div class="col-sm-10 col-md-10">
+                                <p>Tổng số chữ ký số</p>
+                                <span>68000000</span>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="float-right mt20"><i class="fab fa-glide-g"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="wid100 br5px data-box">
+                        <div class="row">
+                            <div class="col-sm-10 col-md-10">
+                                <p>Tổng số bản quyền</p>
+                                <span>68000000</span>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="float-right mt20"><i class="fas fa-bookmark"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb10">
+                <div class="col-md-4 col-sm-4">
+                    <div class="wid100 br5px data-box">
+                        <div class="row">
+                            <div class="col-sm-10 col-md-10">
+                                <p>Số khách hàng năm nay</p>
+                                <span>68000000</span>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="float-right mt20"><i class="fas fa-users"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="wid100 br5px data-box">
+                        <div class="row">
+                            <div class="col-sm-10 col-md-10">
+                                <p>Số chữ ký số năm nay</p>
+                                <span>68000000</span>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="float-right mt20"><i class="fab fa-glide-g"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="wid100 br5px data-box">
+                        <div class="row">
+                            <div class="col-sm-10 col-md-10">
+                                <p>Số bản quyền năm nay</p>
+                                <span>68000000</span>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="float-right mt20"><i class="fas fa-bookmark"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <div class="data-box br5px">
+                        <div class="p-row mb10">
+                            Biểu đồ thống kê
+                        </div>
+                        <div class="row mb10">
+
+                        </div>
+                        <div class="wid100">
+                            <div id="chart">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="data-box br5px">
+                        <div class="p-row mb10">
+                            Lịch sử thao tác
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <script src="~/AdminLTE/plugins/apexcharts-bundle/dist/apexcharts.js"></script>
 <script>
     var options = {
         series: [{
             name: 'series1',
-            data: [31, 40, 28, 51, 42, 109, 100]
+            data: [2000, 4000, 1000, 4000]
         },],
         chart: {
-            height: 350,
-            type: 'area'
+            height: 600,
+            type: 'area',
+            toolbar: {
+                show: false
+            }
         },
         dataLabels: {
             enabled: false
@@ -32,7 +144,11 @@
         },
         xaxis: {
             type: 'string',
-            categories: ["ax", "af", "qda", "bx", "dax", "âdq", "qqf"]
+            categories: ["Quý 1", "Quý 2", "Quý 3", "Quý 4"]
+        },
+        yaxis: {
+            min: 0,
+            max: 5000,
         },
         markers: {
             size: 4,

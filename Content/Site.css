@@ -774,4 +774,36 @@ table tr td {
     word-break: break-word!important;
     text-align: justify!important;
 }
+
+.page-title{
+    font-weight:bold;
+    color:#000;
+    font-size:16px;
+    min-height:40px;
+}
+
+.br5px{
+    border-radius:5px!important;
+}
+.br10px {
+    border-radius: 10px !important;
+}
+.br15px {
+    border-radius: 15px !important;
+}
+.mg50{
+    margin:50%;
+}
+.data-box{
+    background-color: #fff;
+    padding:10px;
+}
+    .data-box i {
+        padding: 10px;
+        color: #3A86FF;
+        border-radius: 5px;
+        background-color: #EBF3FF;
+        display: unset;
+        font-size:20px;
+    }
 /*End*/
