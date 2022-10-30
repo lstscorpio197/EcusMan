@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Date Picker -->
     <link rel="stylesheet" href="/AdminLTE/plugins/datepicker/datepicker3.css">
+    <!--Datatable-->
+    <link rel="stylesheet" href="~/AdminLTE/plugins/Datatables.v1.12.1/datatables.css">
+    <link rel="stylesheet" href="~/AdminLTE/plugins/toasty/toasty.css">
     <!-- Daterange picker -->
     @*<link rel="stylesheet" href="/AdminLTE/plugins/daterangepicker/daterangepicker-bs3.css">*@
 
@@ -120,8 +123,8 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">
-                                            Quản lý tài khoản, phân quyền
+                                        <a href="SUser">
+                                            Quản lý tài khoản
                                         </a>
                                     </li>
                                     <li>
@@ -129,6 +132,9 @@
                                     </li>
                                     <li>
                                         <a href="#">Danh mục phòng ban</a>
+                                    </li>
+                                    <li>
+                                        <a href="ConnectionConfig">Cấu hình kết nối</a>
                                     </li>
                                 </ul>
                             </div>
@@ -296,11 +302,13 @@
     @Scripts.Render("~/bundles/jquery")
     <script type="text/javascript" src="~/Scripts/Reference/Message.js"></script>
     <script type="text/javascript" src="~/Scripts/Reference/jquery-confirm.js"></script>
+    <script src="~/AdminLTE/plugins/toasty/toasty.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/EcusJs")
     @Scripts.Render("~/bundles/CommonJs")
     @Scripts.Render("~/bundles/Validator")
+    <script src="~/AdminLTE/plugins/Datatables.v1.12.1/datatables.js"></script>
     <script src="~/Scripts/Reference/jquery.preloader.min.js"></script>
     <script src="~/Scripts/Common/common.js"></script>
     <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
@@ -315,6 +323,8 @@
         }
         ReSize();
         $(window).on('resize', function () { ReSize(); });
+
+
     </script>
     <script>
         jQuery(function ($) {

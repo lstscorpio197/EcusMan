@@ -21,7 +21,10 @@ namespace ECUS_MAN
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/umd/popper.js",
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap.bundle.js", 
+                      "~/Scripts/jquery-3.4.1.min.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
@@ -44,10 +47,9 @@ namespace ECUS_MAN
                     "~/Scripts/Common/4-file.js",
                     "~/Scripts/Common/5-Format-input.js",
                     "~/Scripts/Common/6-Table.js",
-                    "~/Scripts/Common/7-Thongbaonopphi.js",
-                    "~/Scripts/Common/7.1-BienLaiEinvoice-view.js",
                     "~/Scripts/Common/8-PageEvent.js",
-                    "~/Scripts/Common/9-PageLoad.js"
+                    "~/Scripts/Common/9-PageLoad.js",
+                    "~/Scripts/Common/DataTableConfig.js"
                     ));
             bundles.Add(new ScriptBundle("~/bundles/Validator").Include(
                 "~/Scripts/bootstrap.validator/bootstrapValidator.min.js",

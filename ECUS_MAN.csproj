@@ -130,8 +130,11 @@
     <Compile Include="Common\USER.cs" />
     <Compile Include="Common\WConfigKey.cs" />
     <Compile Include="Common\WMessage.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WSYSTEM\ConnectionConfigController.cs" />
     <Compile Include="Controllers\WSYSTEM\LoginController.cs" />
+    <Compile Include="Controllers\WSYSTEM\SUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -745,6 +748,10 @@
     <Content Include="AdminLTE\plugins\colorpicker\img\hue-horizontal.png" />
     <Content Include="AdminLTE\plugins\colorpicker\img\hue.png" />
     <Content Include="AdminLTE\plugins\colorpicker\img\saturation.png" />
+    <Content Include="AdminLTE\plugins\Datatables.v1.12.1\datatables.css" />
+    <Content Include="AdminLTE\plugins\Datatables.v1.12.1\datatables.js" />
+    <Content Include="AdminLTE\plugins\Datatables.v1.12.1\datatables.min.css" />
+    <Content Include="AdminLTE\plugins\Datatables.v1.12.1\datatables.min.js" />
     <Content Include="AdminLTE\plugins\datatables\dataTables.bootstrap4.css" />
     <Content Include="AdminLTE\plugins\datatables\dataTables.bootstrap4.js" />
     <Content Include="AdminLTE\plugins\datatables\extensions\AutoFill\css\dataTables.autoFill.css" />
@@ -1245,6 +1252,8 @@
     <Content Include="AdminLTE\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="AdminLTE\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="AdminLTE\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="AdminLTE\plugins\toasty\toasty.css" />
+    <Content Include="AdminLTE\plugins\toasty\toasty.js" />
     <Content Include="Content\all.css" />
     <Content Include="Content\all.min.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
@@ -1384,6 +1393,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Common\DataTableConfig.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -1441,6 +1451,7 @@
     <Content Include="AdminLTE\plugins\apexcharts-bundle\dist\locales\ua.json" />
     <Content Include="AdminLTE\plugins\apexcharts-bundle\dist\locales\zh-cn.json" />
     <Content Include="AdminLTE\plugins\apexcharts-bundle\dist\locales\zh-tw.json" />
+    <Content Include="Content\Font\SFPRODISPLAYREGULAR.OTF" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.validator\bootstrapValidator.js" />
     <Content Include="Scripts\bootstrap.validator\bootstrapValidator.min.js" />
@@ -1451,8 +1462,6 @@
     <Content Include="Scripts\Common\4-file.js" />
     <Content Include="Scripts\Common\5-Format-input.js" />
     <Content Include="Scripts\Common\6-Table.js" />
-    <Content Include="Scripts\Common\7-Thongbaonopphi.js" />
-    <Content Include="Scripts\Common\7.1-BienLaiEinvoice-view.js" />
     <Content Include="Scripts\Common\8-PageEvent.js" />
     <Content Include="Scripts\Common\9-PageLoad.js" />
     <Content Include="Scripts\Common\common.js" />
@@ -1544,10 +1553,14 @@
     <Content Include="webfonts\fa-brands-400.ttf" />
     <Content Include="webfonts\fa-brands-400.eot" />
     <Content Include="Views\Shared\_UserInfoModal.cshtml" />
+    <Content Include="Views\ConnectionConfig\Index.cshtml" />
+    <Content Include="Views\ConnectionConfig\_CreateOrUpdate.cshtml" />
+    <Content Include="Views\SUser\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

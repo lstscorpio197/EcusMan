@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách cấu hình";
+}
+
+<div class="page page-index height100">
+    <div class=" mb0px height100">
+        <div class="page-title">
+            Cấu hình kết nối
+        </div>
+        <div class="page-body wid100 height100">
+            <div class="row mb10">
+                <div class="col-sm-4 col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="SearchContent" placeholder="Tìm kiếm...." aria-label="" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text cursor btn-success btn-search" id="basic-addon2"><i class="fas fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-md-8">
+                    <div class="float-right">
+                        <button class="btn btn-success btn-add"><i class="fas fa-plus"></i>&nbsp;Thêm mới</button>
+                        <button class="btn btn-secondary"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="wid100 mb10">
+                <table class="dataTable wid100">
+                    <thead>
+                        <tr>
+                            <th class="wid50px text-center">STT</th>
+                            <th class="wid100px text-center">Thao tác</th>
+                            <th class="wid50px text-center">Hiển thị</th>
+                            <th class="text-center">Tên phân hệ</th>
+                            <th class="text-center">Tên server</th>
+                            <th class="text-center">Tên cơ sở dữ liệu</th>
+                            <th class="text-center">Tên đăng nhập</th>
+                            <th class="text-center">Địa chỉ service</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < 50; i++)
+                        {
+                            <tr>
+                                <td class="wid50px text-center">@(i+1)</td>
+                                <td class="wid100px text-center">
+                                    <span class="cursor" alt="Xem"><i class="fa fa-eye"></i></span>
+                                </td>
+                                <td class="wid50px text-center">
+                                    <input type="checkbox" />
+                                </td>
+                                <td>Nội dung tên phân hệ @(i+1)</td>
+                                <td>Nội dung tên server</td>
+                                <td>Tên cơ sở dữ liệu</td>
+                                <td>Tên đăng nhập</td>
+                                <td>Nội dung địa chỉ service</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_CreateOrUpdate")
+
+@section scripts{
+    <script>
+
+        $('.btn-back-index, .btn-add').on('click', function () {
+            $('.page').toggleClass('hidden');
+        })
+
+        //toast({
+        //    title: "Thành công!",
+        //    message: "Thông báo thành công",
+        //    type: "success",
+        //    duration: 20000
+        //});
+        //$(document).ready(function () {
+        //    var table = $DataTable('.dataTable', {
+        //        serverSide: true,
+        //        ajax: {
+        //            url: 'ConnectionConfig/GetDataTable',
+        //            type: 'post',
+        //            data: function (data) {
+        //                data.keyword = $('[name=SearchContent]').val();
+        //            },
+        //            dataFilter: function (json) {
+        //                let data = JSON.parse(json);
+        //                var totalCounter = 100;
+        //                data.recordsTotal = totalCounter;
+        //                data.recordsFiltered = totalCounter;
+        //                data.data = data.data;
+        //                startIndex = data.startIndex;
+        //                return JSON.stringify(data);
+        //            },
+
+        //        },
+        //    });
+        //    $(document).on('click', '.btn-search', function () {
+        //        $('.dataTable').DataTable().draw();
+        //    })
+        //})
+    </script>
+}

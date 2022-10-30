@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Quản lý tài khoản";
+}
+
+<div class="page page-index height100">
+    <div class=" mb0px height100">
+        <div class="page-title">
+            Danh sách tài khoản
+        </div>
+        <div class="page-body wid100 height100">
+            <div class="row mb10">
+                <div class="col-sm-4 col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="SearchContent" placeholder="Tìm kiếm...." aria-label="" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text cursor btn-success btn-search" id="basic-addon2"><i class="fas fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-md-8">
+                    <div class="float-right">
+                        <button class="btn btn-success btn-add"><i class="fas fa-plus"></i>&nbsp;Thêm mới</button>
+                        <button class="btn btn-secondary"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="wid100 mb10">
+                <table class="dataTable wid100">
+                    <thead>
+                        <tr>
+                            <th class="wid50px text-center">STT</th>
+                            <th class="wid100px text-center">Thao tác</th>
+                            <th class="wid50px text-center">Hiển thị</th>
+                            <th class="text-center">Tên đăng nhập</th>
+                            <th class="text-center">Tên đầy đủ</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">SĐT</th>
+                            <th class="wid50px text-center">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < 50; i++)
+                        {
+                            <tr>
+                                <td class="wid50px text-center">@(i+1)</td>
+                                <td class="wid100px text-center">
+                                    <span class="cursor" alt="Xem"><i class="fa fa-eye"></i></span>
+                                </td>
+                                <td class="wid50px text-center">
+                                    <input type="checkbox" />
+                                </td>
+                                <td>Admin @(i+1)</td>
+                                <td>Administrator</td>
+                                <td>admin@gmail.com</td>
+                                <td class="text-center">0987654321</td>
+                                <td class="wid50px text-center"><i class="fas fa-lock-open green"></i></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

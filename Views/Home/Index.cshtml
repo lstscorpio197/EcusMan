@@ -11,7 +11,7 @@
         <div class="page-body wid100 height100">
             <div class="row mb10">
                 <div class="col-md-4 col-sm-4">
-                    <div class="wid100 br5px data-box">
+                    <div class="wid100 br5px data-box data-box-statistic">
                         <div class="row">
                             <div class="col-sm-10 col-md-10">
                                 <p>Tổng số khách hàng</p>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4">
-                    <div class="wid100 br5px data-box">
+                    <div class="wid100 br5px data-box data-box-statistic">
                         <div class="row">
                             <div class="col-sm-10 col-md-10">
                                 <p>Tổng số chữ ký số</p>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4">
-                    <div class="wid100 br5px data-box">
+                    <div class="wid100 br5px data-box data-box-statistic">
                         <div class="row">
                             <div class="col-sm-10 col-md-10">
                                 <p>Tổng số bản quyền</p>
@@ -52,7 +52,7 @@
             </div>
             <div class="row mb10">
                 <div class="col-md-4 col-sm-4">
-                    <div class="wid100 br5px data-box">
+                    <div class="wid100 br5px data-box data-box-statistic">
                         <div class="row">
                             <div class="col-sm-10 col-md-10">
                                 <p>Số khách hàng năm nay</p>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4">
-                    <div class="wid100 br5px data-box">
+                    <div class="wid100 br5px data-box data-box-statistic">
                         <div class="row">
                             <div class="col-sm-10 col-md-10">
                                 <p>Số chữ ký số năm nay</p>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4">
-                    <div class="wid100 br5px data-box">
+                    <div class="wid100 br5px data-box data-box-statistic">
                         <div class="row">
                             <div class="col-sm-10 col-md-10">
                                 <p>Số bản quyền năm nay</p>
@@ -94,11 +94,52 @@
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <div class="data-box br5px">
-                        <div class="p-row mb10">
+                        <div class="p-row mb10 data-box-title">
                             Biểu đồ thống kê
                         </div>
-                        <div class="row mb10">
-
+                        <div class="row mb10 filter-chart">
+                            <div class="col-md-2">
+                                Năm thống kê
+                                <input class="wid100 br5px" type="text" name="Year" value="@DateTime.Today.Year" />
+                            </div>
+                            <div class="col-md-2">
+                                Kỳ thống kê
+                                <select class="wid100 br5px" name="Follow" >
+                                    <option value="year" selected>Theo năm</option>
+                                    <option value="quarter">Theo quý</option>
+                                    <option value="month">Theo tháng</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                Tháng thống kê
+                                <select class="wid100 br5px" name="Month">
+                                    <option value="0" selected>-- Chọn tháng --</option>
+                                    <option value="1">Tháng 1</option>
+                                    <option value="2">Tháng 2</option>
+                                    <option value="3">Tháng 3</option>
+                                    <option value="4">Tháng 4</option>
+                                    <option value="5">Tháng 5</option>
+                                    <option value="6">Tháng 6</option>
+                                    <option value="7">Tháng 7</option>
+                                    <option value="8">Tháng 8</option>
+                                    <option value="9">Tháng 9</option>
+                                    <option value="10">Tháng 10</option>
+                                    <option value="11">Tháng 11</option>
+                                    <option value="12">Tháng 12</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                Loại số liệu
+                                <select class="wid100 br5px" name="Type">
+                                    <option value="customers" selected>Số khách hàng</option>
+                                    <option value="token">Số chữ ký số</option>
+                                    <option value="license">Số bản quyền</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                &nbsp;
+                                <button class="btn btn-success wid100 br5px btn-search" style="display:block;"><i class="fas fa-filter"></i>&nbsp;Lọc</button>
+                            </div>
                         </div>
                         <div class="wid100">
                             <div id="chart">
@@ -108,11 +149,32 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4">
-                    <div class="data-box br5px">
-                        <div class="p-row mb10">
+                    <div class="data-box br5px height100">
+                        <div class="p-row mb10 data-box-title">
                             Lịch sử thao tác
+                            <div class="float-right">
+                                <span class="cursor" style="font-weight:normal!important">Xem tất cả</span>
+                            </div>
                         </div>
-                        
+                        <div class="list-history">
+                            @for (int i = 0; i < 10; i++)
+                            {
+                                <div class="wid100 history-content">
+                                    <div class="">
+                                        <div class="avatar">
+                                            <img class="wid100 height100" src="~/Content/Images/5267787e24324dd7a8df11c0ce4d3c13.gif" />
+                                        </div>
+                                        <div class="h-content">
+                                            <strong>Đỗ Thức</strong> đã được <strong>Admin</strong> phân quyền <strong>Thêm mới</strong> tại chức năng <a href="#">Danh sách tài khoản</a>
+                                        </div>
+                                    </div>
+                                    <div class="history-time">
+                                        <i class="fa fa-history"></i> 24/10/2022 11:10:00
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -130,9 +192,25 @@
         },],
         chart: {
             height: 600,
-            type: 'area',
+            type: 'bar',
             toolbar: {
-                show: false
+                show: false,
+                tools: {
+                    download: true,
+                    selection: true,
+                    zoom: true,
+                    zoomin: true,
+                    zoomout: true,
+                    pan: true,
+                    reset: true | '<img src="/static/icons/reset.png" width="20">',
+                    customIcons: []
+                }
+            }
+        },
+        plotOptions: {
+            bar: {
+                columnWidth: '45%',
+                distributed: true,
             }
         },
         dataLabels: {
